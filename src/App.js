@@ -1,8 +1,11 @@
 import React from "react";
+import { HomeScreen } from "./screens";
 import "./App.css";
 
 function App() {
-  return <div className="text-custom-purple ">Iai</div>;
+  return (
+    <HomeScreen/>
+  )
 }
 
 export default App;
