@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logoImage from "../../assets/images/logo.png";
+import "../../styles/home.css";
 
 function Header() {
   return (

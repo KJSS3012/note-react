@@ -1,13 +1,14 @@
 import React, { Fragment } from "react";
 import presentationImage from "../../assets/images/presentation.png";
 import { Header } from "../../components";
+import "../../styles/home.css";
 
 function HomeScreen() {
   return (
     <Fragment>
       <Header />
-      <section className="flex px-16 py-10 align-middle justify-center bg-custom-purple">
-        <div className="flex flex-col gap-3 flex-auto w-36 align-middle justify-center text-white">
+      <section className="flex md:flex-row sm:flex-col px-16 py-10 bg-custom-purple">
+        <div className="flex flex-col gap-3 w-36 items-center justify-center text-white w-full">
           <h2 className="text-4xl font-bold">
             Create notes easily and access when you wants on the cloud
           </h2>
@@ -26,7 +27,7 @@ function HomeScreen() {
             Register for free Now
           </a>
         </div>
-        <div className="flex-auto w-64">
+        <div className="w-64 w-full">
           <img src={presentationImage} />
         </div>
       </section>
