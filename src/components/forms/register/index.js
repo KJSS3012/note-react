@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import UsersService from "../../../services/users";
 
 function RegisterForm() {
   const [name, setName] = useState("");
@@ -9,12 +10,26 @@ function RegisterForm() {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
+  const handledSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const service = await UsersService.register({
+        name: name,
+        email: email,
+        password: password,
+      });
+      setRedirectToLogin(true);
+    } catch (error) {
+      setError(true);
+    }
+  };
+
   if (redirtectToLogin) {
     navigate("/login");
   }
 
   return (
-    <form className="py-5 flex flex-col gap-3">
+    <form className="py-5 flex flex-col gap-3" onSubmit={handledSubmit}>
       <div className="flex flex-col gap-2">
         <label className="font-medium">Name:</label>
         <input
