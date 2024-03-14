@@ -1,50 +1,21 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import UsersService from "../../../services/users";
 
-function RegisterForm() {
-  const [name, setName] = useState("");
+function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [redirtectToLogin, setRedirectToLogin] = useState(false);
+  const [redirectToRegister, setRedirectToRegister] = useState(false);
+  const [redirectToNotes, setRedirectToNotes] = useState(false);
   const [error, setError] = useState(false);
-  const navigate = useNavigate();
 
-  const handledSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const service = await UsersService.register({
-        name: name,
-        email: email,
-        password: password,
-      });
-      setRedirectToLogin(true);
-    } catch (error) {
-      setError(true);
-    }
-  };
-
-  if (redirtectToLogin) {
-    navigate("/login");
-  }
+  const handledSubmit = () => {};
 
   return (
     <form className="py-5 flex flex-col gap-3" onSubmit={handledSubmit}>
       <div className="flex flex-col gap-2">
-        <label className="font-medium">Name:</label>
-        <input
-          type="text"
-          name="name"
-          className="border border-gray-400 rounded p-1 outline-none focus:border-custom-purple"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </div>
-
-      <div className="flex flex-col gap-2 ">
         <label className="font-medium">Email:</label>
         <input
-          type="email"
+          type="text"
           name="email"
           className="border border-gray-400 rounded p-1 outline-none focus:border-custom-purple"
           value={email}
@@ -52,7 +23,7 @@ function RegisterForm() {
         />
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 ">
         <label className="font-medium">Password:</label>
         <input
           type="password"
@@ -68,10 +39,10 @@ function RegisterForm() {
           className="text-custom-purple cursor-pointer"
           onClick={(e) => setRedirectToLogin(true)}
         >
-          Login
-        </a>
-        <button className="duration-300 py-1 px-3 border-2 text-custom-purple border-custom-purple hover:bg-custom-purple hover:text-white rounded">
           Register
+        </a>
+        <button className="py-1 px-3 border-2 text-custom-purple border-custom-purple hover:bg-custom-purple hover:text-white rounded duration-300">
+          Login
         </button>
       </div>
 
@@ -82,4 +53,4 @@ function RegisterForm() {
   );
 }
 
-export default RegisterForm;
+export default LoginForm;
