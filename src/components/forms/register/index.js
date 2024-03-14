@@ -33,6 +33,7 @@ function RegisterForm() {
       <div className="flex flex-col gap-2">
         <label className="font-medium">Name:</label>
         <input
+          required
           type="text"
           name="name"
           className="border border-gray-400 rounded p-1 outline-none focus:border-custom-purple"
@@ -44,6 +45,7 @@ function RegisterForm() {
       <div className="flex flex-col gap-2 ">
         <label className="font-medium">Email:</label>
         <input
+          required
           type="email"
           name="email"
           className="border border-gray-400 rounded p-1 outline-none focus:border-custom-purple"
@@ -55,6 +57,7 @@ function RegisterForm() {
       <div className="flex flex-col gap-2">
         <label className="font-medium">Password:</label>
         <input
+          required
           type="password"
           name="password"
           className="border border-gray-400 rounded p-1 outline-none focus:border-custom-purple"
@@ -65,7 +68,7 @@ function RegisterForm() {
 
       <div className="flex gap-2 justify-between items-center">
         <a
-          className="text-custom-purple cursor-pointer"
+          className="text-custom-purple cursor-pointer hover:bg-gray-100 duration-300 rounded py-1 px-3"
           onClick={(e) => setRedirectToLogin(true)}
         >
           Login
