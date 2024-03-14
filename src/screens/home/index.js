@@ -8,7 +8,7 @@ function HomeScreen() {
   return (
     <Fragment>
       <Header />
-      <section className="flex md:flex-row sm:flex-col px-16 py-10 bg-custom-purple">
+      <section className="flex px-10 py-10 bg-custom-purple gap-2">
         <div className="flex flex-col gap-3 w-36 items-center justify-center text-white text-justify w-full">
           <h2 className="text-4xl font-bold">
             Create notes easily and access when you wants on the cloud
@@ -28,7 +28,7 @@ function HomeScreen() {
             Register for free Now
           </Link>
         </div>
-        <div className="w-64 w-full">
+        <div className="w-64 w-full justify-center">
           <img src={presentationImage} />
         </div>
       </section>

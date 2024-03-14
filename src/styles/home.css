@@ -6,3 +6,9 @@ section {
 nav {
 height: 10vh;
 }
+
+@media (max-width: 50em) {
+  section{
+    flex-direction: column;
+  }
+}
