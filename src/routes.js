@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import PrivateRouter from "./components/auth/privateRouter";
+import { PrivateRouter } from "./components"
 import {
   HomeScreen,
   RegisterScreen,
