@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PrivateRouter from "./components/auth/privateRouter";
 import {
   HomeScreen,
   RegisterScreen,
@@ -12,11 +13,11 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<HomeScreen />}></Route>
-        <Route exact path="/register" element={<RegisterScreen />}></Route>
-        <Route exact path="/login" element={<LoginScreen />}></Route>
-        <Route exact path="/notes" element={<NotesScreen />}></Route>
-        <Route exact path="/users/edit" element={<UserScreen />}></Route>
+        <Route exact path="/" element={<HomeScreen />} />
+        <Route exact path="/register" element={<RegisterScreen />} />
+        <Route exact path="/login" element={<LoginScreen />} />
+        <Route exact path="/notes" element={<PrivateRouter><NotesScreen/></PrivateRouter>}/>
+        <Route exact path="/users/edit" element={<UserScreen />} />
       </Routes>
     </BrowserRouter>
   );
