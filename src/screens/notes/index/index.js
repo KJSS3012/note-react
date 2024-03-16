@@ -1,9 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { HeaderLogged } from "../../../components";
 
 function NotesScreen() {
-  return(
-    <p>Notes Screen</p>
-  )
+  return (
+    <Fragment>
+      <HeaderLogged />
+    </Fragment>
+  );
 }
 
 export default NotesScreen;
